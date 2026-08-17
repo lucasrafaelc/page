@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Academic Website</title>
+<meta content="Academic website generated from a Lattes XML file." name="description"/>
+<meta content="Academic Website" property="og:title"/>
+<meta content="Education, publications, professional activities, projects, students, and teaching." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="favicon.ico" rel="icon"/>
+<link href="styles.css?v=generic-template-26" rel="stylesheet"/>
+<script src="./site-config.js?v=generic-template-26"></script>
+<script defer="" src="./main.js?v=generic-template-26"></script>
+<script id="personSchema" type="application/ld+json">{}</script>
+</head>
+<body>
+<header class="site-header">
+<div class="profile">
+<div class="portrait-column">
+<img alt="Profile photo" class="headshot" hidden id="headshot" loading="lazy"/>
+</div>
+<div class="profile-text">
+<h1 id="personName">Academic Profile</h1>
+<p class="title" id="personTitle"></p>
+<p class="eyebrow" id="siteEyebrow">Academic Website</p>
+<p class="bio" id="personBio"></p>
+</div>
+<aside class="profile-rail" aria-label="Contact and profile links">
+<img id="logo" class="logo" hidden alt="Institution logo" />
+<div class="contact" id="contactLinks"></div>
+<div class="profile-links" id="profileLinks" aria-label="Academic and professional profiles"></div>
+</aside>
+
+</div>
+<nav aria-label="Main sections" class="tabs" role="tablist">
+<button type="button" aria-controls="tab-education" aria-selected="true" class="tab active" data-target="education" id="tabbtn-education" role="tab">Education</button>
+<button type="button" aria-controls="tab-professional-activities" aria-selected="false" class="tab" data-target="professional-activities" id="tabbtn-professional-activities" role="tab">Professional Activities</button>
+<button type="button" aria-controls="tab-publications" aria-selected="false" class="tab" data-target="publications" id="tabbtn-publications" role="tab">Publications</button>
+<button type="button" aria-controls="tab-projects" aria-selected="false" class="tab" data-target="projects" id="tabbtn-projects" role="tab">Projects</button>
+<button type="button" aria-controls="tab-students" aria-selected="false" class="tab" data-target="students" id="tabbtn-students" role="tab">Students</button>
+<button type="button" aria-controls="tab-courses" aria-selected="false" class="tab" data-target="courses" id="tabbtn-courses" role="tab">Teaching</button>
+<button type="button" aria-controls="tab-other" aria-selected="false" class="tab hidden" data-target="other" id="tabbtn-other" role="tab">Other Information</button></nav>
+</header>
+<main>
+<section aria-labelledby="tabbtn-education" class="panel active" id="education" role="tabpanel">
+<div class="panel-header">
+<h2>Education Summary</h2>
+<input aria-label="Search education" id="eduSearch" placeholder="Search education…" type="search"/>
+</div>
+<ul class="list card-list" id="eduList"></ul>
+</section>
+<section aria-labelledby="tabbtn-publications" class="panel" id="publications" role="tabpanel">
+<div class="panel-header">
+<h2>Publications</h2>
+<div class="tools">
+<input aria-label="Search publications" id="pubSearch" placeholder="Search publications…" type="search"/>
+<select aria-label="Filter by year" id="pubYearFilter">
+<option value="">All years</option>
+</select>
+<select aria-label="Filter by type" id="pubTypeFilter">
+<option value="">All types</option>
+<option>Journal</option>
+<option>Conference</option>
+<option>Book Chapter</option>
+<option>Thesis</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<ul aria-live="polite" class="list card-list" id="pubList"></ul>
+</section>
+<section aria-labelledby="tabbtn-professional-activities" class="panel" id="professional-activities" role="tabpanel">
+<div class="panel-header">
+<h2>Professional Activities</h2>
+<input aria-label="Search activities" id="actSearch" placeholder="Search activities…" type="search"/>
+</div>
+<div class="stack" id="activities"></div>
+</section>
+<section aria-labelledby="tabbtn-projects" class="panel" id="projects" role="tabpanel">
+<div class="panel-header">
+<h2>Projects</h2>
+<input aria-label="Search projects" id="projSearch" placeholder="Search projects…" type="search"/>
+</div>
+<div class="grid" id="projectsGrid"></div>
+</section>
+<section aria-labelledby="tabbtn-students" class="panel" id="students" role="tabpanel">
+<div class="panel-header">
+<h2>Students</h2>
+<input aria-label="Search students" id="stuSearch" placeholder="Search students…" type="search"/>
+</div>
+<div class="students">
+<div class="student-section" id="sectionOngoing">
+<h3 class="student-section-title">
+<span>Ongoing Advising</span>
+<span class="student-count-chip" id="countOngoing">0</span>
+</h3>
+<ul class="list card-list" id="studentsOngoing"></ul>
+</div>
+<div class="student-section" id="sectionCompleted">
+<h3 class="student-section-title">
+<span>Completed Advising</span>
+<span class="student-count-chip" id="countCompleted">0</span>
+</h3>
+<ul class="list card-list" id="studentsCompleted"></ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="tabbtn-courses" class="panel" id="courses" role="tabpanel">
+<div class="panel-header">
+<h2>Teaching</h2>
+<input aria-label="Search teaching" id="courseSearch" placeholder="Search teaching…" type="search"/>
+</div>
+<ul class="list card-list" id="coursesList"></ul>
+</section>
+<section aria-labelledby="tabbtn-other" class="panel" id="other" role="tabpanel">
+<div class="panel-header">
+<h2>Other Information</h2>
+<input aria-label="Search other info" id="otherSearch" placeholder="Search other info…" type="search"/>
+</div>
+<div class="stack" id="otherList"></div>
+</section>
+</main>
+<footer class="site-footer">
+<small>© <span id="year"></span> <span id="footerName">Academic Website</span>. Built with accessible, lightweight HTML/CSS/JS.</small>
+</footer>
+<script id="fallback-wirer">
+(function(){
+  function wireTabs(root){
+    var tabs = root.querySelectorAll('.tab');
+    var panels = root.querySelectorAll('.panel');
+    if (!tabs.length || !panels.length) return;
+    root.addEventListener('click', function(e){
+      var btn = e.target.closest && e.target.closest('.tab');
+      if(!btn) return;
+      var id = btn.getAttribute('data-target');
+      tabs.forEach(function(t){ t.classList.toggle('active', t===btn); t.setAttribute('aria-selected', t===btn ? 'true' : 'false'); });
+      panels.forEach(function(p){ p.classList.toggle('active', p.id===id); });
+      try { history.replaceState(null, '', '#'+id); } catch(_) {}
+    }, {passive:true});
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ wireTabs(document); });
+  } else {
+    wireTabs(document);
+  }
+})();
+</script>
+</body>
+</html>

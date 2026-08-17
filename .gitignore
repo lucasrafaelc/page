@@ -1,0 +1,16 @@
+# Internal generator / conversion scripts
+apply_palette_*.py
+convert_xml_to_utf8.py
+sync-site-config.mjs
+
+# Backup and temporary files
+*.bak
+*.tmp
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store
+Thumbs.db
